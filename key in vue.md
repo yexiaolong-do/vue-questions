@@ -4,13 +4,13 @@
  1、两个箱体的组件产生类似的dom，不同的组件产生不同的dom结构；
  2、同一层级的一组节点，他们可以通过id进行区分；
  这样虚拟dom的diff算法复杂度从O(n^3)降到O(n)
-![diff图片](https://github.com/yexiaolong-do/vue-questions/blob/master/diff1.png)
+![diff图片](https://github.com/yexiaolong-do/vue-questions/blob/master/img/diff1.png)
 当页面的数据变化时，diff算法只会比较同一层级的节点，如果节点类型不同，直接干掉前面的节点，再创建并插入新的节点而忽略后面的子节点，
 如节点类型相同，则重新设置该节点属性从而实现节点更新
 ②如以下情况：
-![diff2](https://github.com/yexiaolong-do/vue-questions/blob/master/diff2.png)
+![diff2](https://github.com/yexiaolong-do/vue-questions/blob/master/img/diff2.png)
 当在B与C之间加F时，diff默认的执行方式如下
-![diff3](https://github.com/yexiaolong-do/vue-questions/blob/master/diff3.png)
+![diff3](https://github.com/yexiaolong-do/vue-questions/blob/master/img/diff3.png)
 如果使用key作为节点的唯一标识，diff算法就可以正确识别此节点，找到正确的位置插入F，
-![diff4](https://github.com/yexiaolong-do/vue-questions/blob/master/diff4.png)
+![diff4](hhttps://github.com/yexiaolong-do/vue-questions/blob/master/img/diff4.png)
 ③vue中在使用相同标签名元素的过渡切换时，也会使用到key属性，其目的也是为了让vue可以区分它们，否则vue只会替换其内部属性而不会触发过渡效果
