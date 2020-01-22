@@ -1,12 +1,11 @@
-你知道vue中key的作用和工作原理吗？说说你对它的理解.  
+#你知道vue中key的作用和工作原理吗？说说你对它的理解.  
 ①key的作用主要是为了搞笑的更新虚拟DOM;  
  vue的虚拟dom的diff算法核心是基于两个假设：  
  1、两个箱体的组件产生类似的dom，不同的组件产生不同的dom结构；  
  2、同一层级的一组节点，他们可以通过id进行区分；  
  这样虚拟dom的diff算法复杂度从O(n^3)降到O(n)  
 ![diff图片](https://github.com/yexiaolong-do/vue-questions/blob/master/img/diff1.png)  
-当页面的数据变化时，diff算法只会比较同一层级的节点，如果节点类型不同，直接干掉前面的节点，再创建并插入新的节点而忽略后面的子节点，  
-如节点类型相同，则重新设置该节点属性从而实现节点更新  
+当页面的数据变化时，diff算法只会比较同一层级的节点，如果节点类型不同，直接干掉前面的节点，再创建并插入新的节点而忽略后面的子节点，如节点类型相同，则重新设置该节点属性从而实现节点更新  
 ②如以下情况：  
 ![diff2](https://github.com/yexiaolong-do/vue-questions/blob/master/img/diff2.png)  
 当在B与C之间加F时，diff默认的执行方式如下  
