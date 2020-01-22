@@ -12,5 +12,5 @@
 当在B与C之间加F时，diff默认的执行方式如下  
 ![diff3](https://github.com/yexiaolong-do/vue-questions/blob/master/img/diff3.png)  
 如果使用key作为节点的唯一标识，diff算法就可以正确识别此节点，找到正确的位置插入F，  
-![diff4](hhttps://github.com/yexiaolong-do/vue-questions/blob/master/img/diff4.png)  
+![diff4](https://github.com/yexiaolong-do/vue-questions/blob/master/img/diff4.png)  
 ③vue中在使用相同标签名元素的过渡切换时，也会使用到key属性，其目的也是为了让vue可以区分它们，否则vue只会替换其内部属性而不会触发过渡效果  
