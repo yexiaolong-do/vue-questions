@@ -9,7 +9,7 @@ if(oldVnode.text !== null && vnode.text !== null && oldVnode.text !== vnode.text
 if( oldCh && ch && oldCh !== ch ), 两个节点都有子节点，而且它们不一样，这样我们会调用updateChildren函数比较子节点，这是diff的核心
 else if (ch)，只有新的节点有子节点，调用createEle(vnode)，vnode.el已经引用了老的dom节点，createEle函数会在老dom节点上添加子节点。
 else if (oldCh)，新节点没有子节点，老节点有子节点，直接删除老节点。
-增加key会增加比较效率，详见[Mozilla](https://github.com/yexiaolong-do/vue-questions/blob/master/key%20in%20vue.md)  
+增加key会增加比较效率，详见[key in vue](https://github.com/yexiaolong-do/vue-questions/blob/master/key%20in%20vue.md)  
 ②总结：  
 尽量不要跨层级的修改dom  
 在开发组件时，保持稳定的 DOM 结构会有助于性能的提升  
