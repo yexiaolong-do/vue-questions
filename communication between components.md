@@ -6,9 +6,9 @@
     ①.在父组件中使用$on定义，子组件通过$emit触发（父组件绑定使用v-model，子组件使用$emit触发input事件，实现双向数据绑定）；  
     ②.通过绑定在组件上定义，使用$emit触发；  
 三、常用的非父子组件通信  
-1.ref链：
-2.bus事件总线：在其中一个组件的挂载钩子函数上做事件声明，在另一个组件中通过bus.$emit('事件名')来触发这个自定义事件；
-3.使用attrs和listeners：组件中没有定义在props里的数据可以通过$attrs拿到
-4.provide和inject：父组件中通过provider来提供变量，然后在子组件中通过inject来注入变量
-5.parent和children
-四、多组件状态共享：使用Vuex
+1.ref链：  
+2.bus事件总线：在其中一个组件的挂载钩子函数上做事件声明，在另一个组件中通过bus.$emit('事件名')来触发这个自定义事件；  
+3.使用attrs和listeners：组件中没有定义在props里的数据可以通过$attrs拿到  
+4.provide和inject：父组件中通过provider来提供变量，然后在子组件中通过inject来注入变量  
+5.parent和children  
+四、多组件状态共享：使用Vuex  
