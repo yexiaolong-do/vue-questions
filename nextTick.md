@@ -1,0 +1,12 @@
+你知道nextTick的原理吗？  
+一、简要概括起来有以下几点：  
+  1.vue中DOM的更新是异步的；  
+  2.虽然vue一直强调数据驱动视图，但是有时候不可避免要操作dom；  
+  3.在数据变化后等待vue更新dom是一个异步执行过程，需要用nextTick来搞定。  
+二、next实现原理  
+  1.先定义一个callbacks存放所有的nextTick里的回调函数，  
+  2.判断当前浏览器是否支持promise，如果支持，就用promise来触发回调函数，  
+  3.若不支持promise就看是否支持MutationObserver,是一个可以监听DOm结构变化的借口，观察文本节点发生变化时，触发执行所有回调函数。  
+  4，以上都不支持就只能用setTimeout来完成异步执行了。  
+三、nextTick使用情景  
+  在vue生命周期的created（）钩子函数进行的DOM操作的时候需要放在vue.nextTick（）的回调函数中。  
