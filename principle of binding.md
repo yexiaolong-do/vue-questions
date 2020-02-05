@@ -7,4 +7,4 @@
     ①在自身实例化时往属性订阅器（dep）里面添加自己  
     ②自身必须有一个update（）方法  
     ③待属性变动dep.notice()通知时，能调用自身的update()方法，并触发compile中绑定的回调，功成身退。  
-  4.
+  4.MVVM作为数据绑定的入口，整合Oberver，compile和watcher三者，通过observer来监听自己的model数据变化，通过compile来解析编译模版指令，最终利用watcher搭起observer和compile之间的通信桥梁，达到数据变化=>视图更新；视图交互变化（input）=>数据model变更的双向绑定效果。
